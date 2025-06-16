@@ -5,11 +5,13 @@ using namespace std;
 void push(Queue& Queue1) {
 	int Number;
 	cin >> Number;
-	if (!cin) {
-		cout << "error";
+	if (Number) {
+		Queue1.PushFunction(Number);
 	}
 	else {
-		Queue1.PushFunction(Number);
+		cout << "error";
+		cin.clear();
+		cout << endl;
 	}
 }
 void pop(Queue& Queue1) {
