@@ -8,6 +8,15 @@ private:
 	Node* Tail;
 public:
 	Queue() : Head(NULL), Tail(NULL) {}
+	~Queue() {
+		if (!IsEmpty()) {
+			while (Head) {
+				Node* Temp = Head;
+				Head = Head->GetNext();
+				delete Temp;
+			}
+		}
+	}
 	void FrontFunction();
 	void PushFunction(int Number);
 	void SizeFunction();
