@@ -3,6 +3,7 @@
 #include "Node.h"
 #include "Queue.h"
 #include "Function.h"
+#include "QueueException.h"
 using namespace std;
 
 int main() {
@@ -13,38 +14,41 @@ int main() {
 	cout << "1) push число - добавл€ет число в очередь" << endl;
 	cout << "2) pop - удал€ет элемент из очереди" << endl;
 	cout << "3) front - выводит первый элемент очереди" << endl;
-	cout << "4) size - выводит размер очереди" << endl; 
+	cout << "4) size - выводит размер очереди" << endl;
 	cout << "5) clear - удал€ет все элементы из очереди" << endl;
 	cout << "6) exit - выход из программы" << endl;
-
-
 	while (true) {
-		cout << "¬ведите команду (push число/pop/front/size/clear/exit):" << endl;
-		cin >> Input;
-		if (Input == "exit") {
-			cout << "bye";
-			Queue1.~Queue();
-			break;
+		try {
+			cout << "¬ведите команду: ";
+			cin >> Input;
+			if (Input == "exit") {
+				cout << "bye";
+				Queue1.~Queue();
+				break;
+			}
+			else if (Input == "push") {
+				push(Queue1);
+			}
+			else if (Input == "pop") {
+				pop(Queue1);
+			}
+			else if (Input == "front") {
+				front(Queue1);
+			}
+			else if (Input == "size") {
+				size(Queue1);
+			}
+			else if (Input == "clear") {
+				clear(Queue1);
+			}
+			else {
+				throw QueueException("error");
+			}
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			Input.clear();
 		}
-		else if (Input == "push") {
-			push(Queue1);
+		catch (const QueueException& Exception) {
+			cerr << Exception.what() << endl;
 		}
-		else if (Input == "pop") {
-			pop(Queue1);
-		}
-		else if (Input == "front") {
-			front(Queue1);
-		}
-		else if (Input == "size") {
-			size(Queue1);
-		}
-		else if (Input == "clear") {
-			clear(Queue1);
-		}
-		else {
-			cout << "error" << endl;
-		}
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		Input.clear();
 	}
 }
