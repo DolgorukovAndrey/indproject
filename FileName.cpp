@@ -42,8 +42,11 @@ int main() {
 				Clear(Queue);
 			}
 			else {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 				throw QueueException("error (Неверная команда)");
 			}
+			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			Input.clear();
 		}
