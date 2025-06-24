@@ -8,6 +8,8 @@ void Push(Queue& Queue) {
 	int Number;
 	cin >> Number;
 	if (Number) {
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cout << "Вы хотите добавить " << Number << "? (Да - y, Нет - n): ";
 		string Answer;
 		try {
