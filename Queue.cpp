@@ -1,7 +1,7 @@
 #include "Queue.h"
 void Queue::FrontFunction() {
     if (IsEmpty()) {
-        cout << "error" << endl;
+        cout << "error (Пустая очередь)" << endl;
         return;
     }
     else {
@@ -45,7 +45,7 @@ void Queue::PushFunction(int Number) {
 void Queue::PopFunction() {
     int Number;
     if (IsEmpty()) {
-        cout << "error" << endl;
+        cout << "error (Пустая очередь)" << endl;
         return;
     }
     else {
