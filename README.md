@@ -33,4 +33,5 @@
 Класс QueueException используется для обработки исключений.
 
 Пример работы:
-![Alt text](https://i.yapx.ru/ZjeMM.png)
+
+![Image](https://github.com/user-attachments/assets/7002ff57-2943-44ff-a55a-2ffdb481b315)
