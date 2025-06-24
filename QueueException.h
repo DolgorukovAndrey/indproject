@@ -8,7 +8,7 @@ private:
     string Message;
 public:
     QueueException(const string& Error) : Message(Error) {}
-    string what() const {
+    string What() const {
         return Message;
     }
 };

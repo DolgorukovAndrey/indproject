@@ -4,7 +4,7 @@
 #include "QueueException.h"
 #include "Queue.h"
 using namespace std;
-void push(Queue& Queue1) {
+void Push(Queue& Queue) {
 	int Number;
 	cin >> Number;
 	if (Number) {
@@ -13,31 +13,31 @@ void push(Queue& Queue1) {
 		try {
 			cin >> Answer;
 			if (Answer == "y") {
-				Queue1.PushFunction(Number);
+				Queue.PushFunction(Number);
 			}
 			if (Answer != "y" && Answer != "n") {
-				throw QueueException("error");
+				throw QueueException("error (Неверный выбор, команда не выполнена)");
 			}
 		}
 		catch (const QueueException& Exception) {
-			cerr << Exception.what() << endl;
+			cerr << Exception.What() << endl;
 		}
 	}
 	else {
-		cout << "error";
+		cout << "error (Неверно указано число)";
 		cin.clear();
 		cout << endl;
 	}
 }
-void pop(Queue& Queue1) {
-	Queue1.PopFunction();
+void Pop(Queue& Queue) {
+	Queue.PopFunction();
 }
-void front(Queue& Queue1) {
-	Queue1.FrontFunction();
+void Front(Queue& Queue) {
+	Queue.FrontFunction();
 }
-void size(Queue& Queue1) {
-	Queue1.SizeFunction();
+void Size(Queue& Queue) {
+	Queue.SizeFunction();
 }
-void clear(Queue& Queue1) {
-	Queue1.ClearFunction();
+void Clear(Queue& Queue) {
+	Queue.ClearFunction();
 }

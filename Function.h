@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include "Queue.h"
-void push(Queue& Queue1);
-void pop(Queue& Queue1);
-void front(Queue& Queue1);
-void size(Queue& Queue1);
-void clear(Queue& Queue1);
+void Push(Queue& Queue);
+void Pop(Queue& Queue);
+void Front(Queue& Queue);
+void Size(Queue& Queue);
+void Clear(Queue& Queue);

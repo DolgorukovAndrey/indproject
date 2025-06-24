@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	Queue Queue1;
+	Queue Queue;
 	string Input;
 	cout << "Для работы в программе доступны следующие команды: " << endl;
 	cout << "1) push число - добавляет число в очередь" << endl;
@@ -23,32 +23,32 @@ int main() {
 			cin >> Input;
 			if (Input == "exit") {
 				cout << "bye";
-				Queue1.~Queue();
+				Queue.~Queue();
 				break;
 			}
 			else if (Input == "push") {
-				push(Queue1);
+				Push(Queue);
 			}
 			else if (Input == "pop") {
-				pop(Queue1);
+				Pop(Queue);
 			}
 			else if (Input == "front") {
-				front(Queue1);
+				Front(Queue);
 			}
 			else if (Input == "size") {
-				size(Queue1);
+				Size(Queue);
 			}
 			else if (Input == "clear") {
-				clear(Queue1);
+				Clear(Queue);
 			}
 			else {
-				throw QueueException("error");
+				throw QueueException("error (Неверная команда)");
 			}
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			Input.clear();
 		}
 		catch (const QueueException& Exception) {
-			cerr << Exception.what() << endl;
+			cerr << Exception.What() << endl;
 		}
 	}
 }
